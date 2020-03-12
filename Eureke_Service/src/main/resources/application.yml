@@ -1,0 +1,27 @@
+#端口
+server:
+  port: 7776
+#
+eureka:
+  client:
+    #表示是否发从Eureka Server中获取注册信息，默认true（本例是单点测试Eureka Server，所以不需要同步）
+    fetch-registry: false
+    #表示是否将自己注册到Eureka Server，默认是true（当前应用就是Eureka Server，所以设为false）
+    register-with-eureka: false
+    #表示查询和注册服务的地址，多个地址可以用"，"分割
+    service-url:
+      defaultZone: http://localhost:7776/eureka/
+#启用security并设置用用户名密码
+#security:
+#  basic:
+#    enabled: true
+#  user: admin
+#  password: admin
+spring:
+#  application:
+#    name: eurekaserver
+  security:
+    basic: false
+    user:
+      name: admin
+      password: admin
